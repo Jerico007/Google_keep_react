@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react";
+// Common Component
 import Input from "../Common Components/Input/Input";
 import Button from "../Common Components/Button/Button";
 import TextArea from "../Common Components/Text Area/TextArea";
+// NotesContext
 import { NotesContext } from "../../Context/notesContext";
 import "./NoteCreator.css";
 const NoteCreator = () => {
@@ -19,7 +21,7 @@ const NoteCreator = () => {
     {
         return;
     }
-    notesDispatch({ type: "CREATE", payLoad: data });
+    notesDispatch({ type: "CREATE", payLoad: {...data} });
     setData({title:"",content:""});
   }
 

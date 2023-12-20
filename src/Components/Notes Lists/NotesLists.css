@@ -1,0 +1,36 @@
+.NotesLists-container{
+  
+    padding: 1.5rem;
+}
+
+.NotesLists-holder{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 73vh;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.NotesLists-holder::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+.NotesLists-holder::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #cac7bd;
+  }
+   
+  /* Handle */
+.NotesLists-holder::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #878c50;
+  }
+  
+  @media  screen and (min-width:320px) and (max-width:768px) {
+    .NotesLists-holder{
+      height: 61vh;
+    }
+  }

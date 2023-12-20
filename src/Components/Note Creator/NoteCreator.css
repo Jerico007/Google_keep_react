@@ -37,12 +37,17 @@
     border: none;
 }
 
+.Note-model > form > input{
+    background-color: rgb(193, 186, 186);
+}
+
 .Note-model > form .Content-field {
     border-radius: 5px;
     padding: 0.5rem;
     width: 50vw;
     resize: none;
     font-family: "Poppins", sans-serif;
+    background-color: rgb(193, 186, 186);
 }
 
  form .Modal-button {
