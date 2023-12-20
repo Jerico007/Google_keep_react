@@ -13,13 +13,15 @@ const NotesProvider = ({ children }) => {
 
   //UseEffect to get values from local storage on first load
   useEffect(() => {
-    if(JSON.parse(localStorage.getItem("notesData")).length > 0)
+    if(JSON.parse(localStorage.getItem("notesData")))
     {
         const arr = JSON.parse(localStorage.getItem("notesData"));
-
-        const id = arr[arr.length - 1].id + 1;
-        setNotesId(id);
-        notesDispatch({type:"CREATE" , payLoad: arr});
+        if(arr.length > 0)
+        {
+          const id = arr[arr.length - 1].id + 1;
+          setNotesId(id);
+          notesDispatch({type:"CREATE" , payLoad: arr});
+        }
     }
   },[])
 
