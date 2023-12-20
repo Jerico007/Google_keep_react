@@ -74,7 +74,7 @@ const NoteCard = ({noteData}) => {
                     noteData.edit ? <Input className={"NoteCard-title-Input"} type={"text"} value={editedData.title} onChange={(e)=>{setEditData({...editedData,title:e.target.value})}}  /> : <h3 className='NoteCard-title'>{noteData.title}</h3>
                 }
                 {
-                    noteData.edit ? <TextArea className={"NoteCard-content-Input"} rows={5} columns={22} value={editedData.content} onChange={(e)=>{setEditData({...editedData,content:e.target.value})}} /> : <p className='NoteCard-content'> {noteData.content}</p>
+                    noteData.edit ? <TextArea className={"NoteCard-content-Input"} rows={5} columns={22} value={editedData.content} onChange={(e)=>{setEditData({...editedData,content:e.target.value})}} /> : <pre className='NoteCard-content'> {noteData.content}</pre>
                 }
                
                 <div className='NoteCard-button' >

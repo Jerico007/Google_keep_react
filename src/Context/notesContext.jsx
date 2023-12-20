@@ -1,4 +1,6 @@
 import { createContext, useReducer, useState,useEffect } from "react";
+
+// Imported from custom Hooks
 import useLocalStorage from "../Hooks/useLocalStorage";
 
 export const NotesContext = createContext();
@@ -11,7 +13,7 @@ const NotesProvider = ({ children }) => {
   const [storedValue, setValue] = useLocalStorage("notesData", []);
 
 
-  //UseEffect to get values from local storage on first load
+  //UseEffect to get notes from local storage if present on first load
   useEffect(() => {
     if(JSON.parse(localStorage.getItem("notesData")))
     {
@@ -27,14 +29,16 @@ const NotesProvider = ({ children }) => {
 
   //Function for notesReducer
   function notesReducer(state, action) {
+    
+    // To Add note when clicked on add button
     if (action.type === "ADD") {
       return { ...state, addNote: action.payLoad };
     }
 
+    // To Create a new note when clicked on Create button
     if (action.type === "CREATE") {
       let newArr = [...state.notes];
 
-      //Checking if action.payLoad is array
       if(Array.isArray(action.payLoad)) {
           newArr = [...action.payLoad];
         }
@@ -49,23 +53,23 @@ const NotesProvider = ({ children }) => {
         
         setNotesId(notesId + 1);
       }
-      //Setting values in localStorage
       setValue(newArr);
       return { ...state, notes: newArr, addNote: false };
     }
 
+    //To Delete a note when clicked on delete button
     if(action.type === "DELETE")
     {
       const notes = [...state.notes];
 
       const newArr = notes.filter(val => val.id !== Number(action.payLoad));
 
-      //Setting values in localStorage
       setValue(newArr);
       return {...state, notes: newArr};
 
     }
 
+    //To edit the note when clicked on edit button
     if(action.type === "EDIT")
     {
       const newArr = [...state.notes];
@@ -80,6 +84,7 @@ const NotesProvider = ({ children }) => {
       return {...state,notes: newArr};
     }
 
+    //To save the note when clicked on save button
     if(action.type === "SAVE")
     {
       const newArr = [...state.notes];
@@ -93,11 +98,12 @@ const NotesProvider = ({ children }) => {
             break;
         }
       }
-      //Setting values in localStorage
+    
       setValue(newArr);
       return {...state,notes: newArr};
     }
 
+    //To change the color of the note when clicked on the color button
     if(action.type === "COLORCHANGE")
     {
       const newArr = [...state.notes];
@@ -109,16 +115,35 @@ const NotesProvider = ({ children }) => {
             break;
         }
       }
-      //Setting values in localStorage
+    
       setValue(newArr);
       return {...state,notes: newArr};
     }
 
+
+    //To reset created notes when clicked on reset button
     if(action.type === "RESET")
     {
-       //Setting values in localStorage
+    
       setValue([]);
       return {...state,notes: []};
+    }
+
+    //To search for notes by title when searched in the search box
+    if(action.type === "SEARCH")
+    {
+      const notes = [...state.notes];
+      let newArr = [];
+      
+      if(action.payLoad === "")
+      {
+        return {...state,searchNotes:[]};
+      }
+      
+
+      newArr = notes.filter((val)=> val.title.substring(0,action.payLoad.length).toLowerCase() === action.payLoad);
+      console.log(newArr);
+      return {...state, searchNotes: newArr};
     }
 
     return state;
@@ -128,6 +153,7 @@ const NotesProvider = ({ children }) => {
   const [noteState, notesDispatch] = useReducer(notesReducer, {
     notes: [],
     addNote: false,
+    searchNotes: []
   });
 
   return (
