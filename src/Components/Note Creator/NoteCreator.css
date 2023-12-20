@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap");
+
+.Note-container{
+    top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(128 128 128 / 83%);
+   z-index: 100;
+  
+}
+
+.Note-model > form{
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(83 83 76);
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 8vh;
+    box-shadow: 0px 0px 16px 5px black;
+}
+
+
+.Note-model > form > * {
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    width: 50vw;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+.Note-model > form .Content-field {
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 50vw;
+    resize: none;
+    font-family: "Poppins", sans-serif;
+}
+
+ form .Modal-button {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    box-shadow: 0px 0px 16px 5px #907979;
+}

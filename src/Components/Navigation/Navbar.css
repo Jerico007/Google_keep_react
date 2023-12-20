@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap");
+.Navbar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.Navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.Navbar-logo > img {
+  /* box-shadow: 0px 0px 1px 1px grey; */
+  filter: drop-shadow(0px 0px 1px 1px grey);
+}
+
+.Navbar-logo > .Navbar-brand {
+  font-family: "Poppins", sans-serif;
+  color: grey;
+  font-size: 1.3rem;
+}
+
+.Navbar {
+  background-color: rgb(83 83 76);
+}
+
+.Navbar-Search {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+
+
+
+.Navbar-Search > .Add-button {
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  background-color: #FFB74D;
+  transition: all 0.3s ease-in;
+}
+
+.Add-button:hover{
+  box-shadow: 0px 0px 16px 5px #938648; 
+}
+
+
+.Navbar-Search > .Search-bar {
+  width: 60vw;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in;
+}
+
+.Search-bar:focus{
+  box-shadow: 0px 0px 12px 5px #9e9e9e;
+}
