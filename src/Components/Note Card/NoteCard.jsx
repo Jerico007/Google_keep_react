@@ -24,7 +24,7 @@ const NoteCard = ({noteData}) => {
     // Note style
     const noteStyle = {
         backgroundColor: noteData.color,
-        boxShadow: `0px 0px 16px 4px ${noteData.color}`
+        
     };
 
     //function to change note color
@@ -69,7 +69,7 @@ const NoteCard = ({noteData}) => {
 
     return (
         <div className='NoteCard-container'>
-            <div className='NoteCard-module' style={{backgroundColor:noteStyle.backgroundColor,boxShadow:noteStyle.boxShadow}}>
+            <div className='NoteCard-module' style={{backgroundColor:noteStyle.backgroundColor}}>
                 {
                     noteData.edit ? <Input className={"NoteCard-title-Input"} type={"text"} value={editedData.title} onChange={(e)=>{setEditData({...editedData,title:e.target.value})}}  /> : <h3 className='NoteCard-title'>{noteData.title}</h3>
                 }

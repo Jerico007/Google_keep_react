@@ -1,7 +1,7 @@
-import { createContext, useReducer, useState,useEffect } from "react";
-
+import { createContext, useReducer,useState, useEffect } from "react";
 // Imported from custom Hooks
 import useLocalStorage from "../Hooks/useLocalStorage";
+
 
 export const NotesContext = createContext();
 
@@ -26,6 +26,13 @@ const NotesProvider = ({ children }) => {
         }
     }
   },[])
+
+   //Reducer for handeling notes states
+   const [noteState, notesDispatch] = useReducer(notesReducer, {
+    notes: [],
+    addNote: false,
+    searchNotes: []
+  });
 
   //Function for notesReducer
   function notesReducer(state, action) {
@@ -149,12 +156,7 @@ const NotesProvider = ({ children }) => {
     return state;
   }
 
-  //Reducer for handeling notes states
-  const [noteState, notesDispatch] = useReducer(notesReducer, {
-    notes: [],
-    addNote: false,
-    searchNotes: []
-  });
+ 
 
   return (
     <NotesContext.Provider value={{ noteState, notesDispatch }}>
