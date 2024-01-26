@@ -1,4 +1,4 @@
-import {React,useContext,useState} from 'react';
+import {React,useContext,useState,useCallback} from 'react';
 // Common component
 import Input from '../Common Components/Input/Input';
 import TextArea from "../Common Components/Text Area/TextArea";
@@ -50,7 +50,7 @@ const NoteCard = ({noteData}) => {
     }
 
     //function to edit note
-    function editNote(e)
+    function editNote(e) 
     {
         setEditData({title:noteData.title,content:noteData.content});
         notesDispatch({type:"EDIT",payLoad:e.target.parentElement.id});

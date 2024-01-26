@@ -14,20 +14,11 @@
 }
 
 .NotesLists-holder::-webkit-scrollbar {
-    width: 7px;
+   
+    display: none; 
   }
   
-  /* Track */
-.NotesLists-holder::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: #cac7bd;
-  }
-   
-  /* Handle */
-.NotesLists-holder::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: #878c50;
-  }
+
   
   @media  screen and (min-width:320px) and (max-width:768px) {
     .NotesLists-holder{

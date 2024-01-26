@@ -52,7 +52,7 @@
     background-color: bisque;
     border-radius: 9px;
     height: 13vh;
-    white-space: pre-wrap;
+    white-space: pre-line;
     white-space: -moz-pre-wrap;
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;

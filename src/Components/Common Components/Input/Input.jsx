@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,memo} from 'react';
 
 const Input = ({className,type,placeholder,id ,onChange ,value}) => {
     return (
@@ -8,4 +8,4 @@ const Input = ({className,type,placeholder,id ,onChange ,value}) => {
     );
 }
 
-export default Input;
+export default memo(Input);
