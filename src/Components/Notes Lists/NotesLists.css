@@ -1,27 +1,14 @@
-.NotesLists-container{
-  
-    padding: 1.5rem;
+.NotesLists-container {
+  padding: 1.5rem;
 }
 
-.NotesLists-holder{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    height: 73vh;
-    overflow: hidden;
-    overflow-y: auto;
+.NotesLists-holder {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .NotesLists-holder::-webkit-scrollbar {
-   
-    display: none; 
-  }
-  
-
-  
-  @media  screen and (min-width:320px) and (max-width:768px) {
-    .NotesLists-holder{
-      height: 61vh;
-    }
-  }
+  display: none;
+}

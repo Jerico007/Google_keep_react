@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap");
 
+
 .Note-container{
     top: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: rgb(128 128 128 / 83%);
-   z-index: 100;
+   z-index: 200;
   
 }
 

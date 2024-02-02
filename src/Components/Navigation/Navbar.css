@@ -26,6 +26,9 @@
 
 .Navbar {
   background-color: rgb(83 83 76);
+  position: sticky;
+  top: 0%;
+  z-index: 100;
 }
 
 .Navbar-Search {

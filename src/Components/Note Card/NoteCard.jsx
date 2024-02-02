@@ -1,4 +1,4 @@
-import { React, useContext, useState, useCallback, useEffect } from "react";
+import { React, useContext, useState, useEffect } from "react";
 // Common component
 import Input from "../Common Components/Input/Input";
 import TextArea from "../Common Components/Text Area/TextArea";
@@ -10,13 +10,20 @@ import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
 
-
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 //NotesContext
 import { NotesContext } from "../../Context/notesContext";
 import "./NoteCard.css";
 const NoteCard = ({ noteData }) => {
  
+  useEffect(()=>{
+    Aos.init({
+      duration:700,
+      easing:"ease-in-out-back"
+    })
+  },[])
 
   // Context API
   const { notesDispatch } = useContext(NotesContext);
@@ -70,7 +77,7 @@ const NoteCard = ({ noteData }) => {
   }
 
   return (
-    <div className="NoteCard-container">
+    <div className="NoteCard-container" data-aos="fade-down">
       <div
         className="NoteCard-module"
         style={{ backgroundColor: noteStyle.backgroundColor }}
