@@ -1,18 +1,30 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 // Common Component
 import Input from "../Common Components/Input/Input";
 import Button from "../Common Components/Button/Button";
 import TextArea from "../Common Components/Text Area/TextArea";
+
+import Aos from "aos";
+import 'aos/dist/aos.css';
+
+
 // NotesContext
 import { NotesContext } from "../../Context/notesContext";
 import "./NoteCreator.css";
 const NoteCreator = () => {
-
+  
     // Context API
   const { noteState, notesDispatch } = useContext(NotesContext);
 
   //useState to handel form inputs
   const [data,setData] = useState({title:"",content:""});
+  
+
+  useEffect(()=>{
+    Aos.init({
+      duration:500,
+    })
+  },[])
 
   //Function to handle submit
   function handelSubmit(e) {
@@ -34,7 +46,7 @@ const NoteCreator = () => {
 
   return (
     <div className="Note-container" onClick={closeModal}>
-      <div className="Note-model">
+      <div className="Note-model" data-aos="zoom-in-up">
         <form onSubmit={handelSubmit}>
           <Input type={"text"} placeholder={"Title..."} onChange={(e)=>{setData({...data,title:e.target.value})}}/>
           <TextArea
