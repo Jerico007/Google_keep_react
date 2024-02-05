@@ -15,9 +15,9 @@ const NotesProvider = ({ children }) => {
 
   //UseEffect to get notes from local storage if present on first load
   useEffect(() => {
-    if(JSON.parse(localStorage.getItem("notesData")))
+    if(storedValue.length > 0) 
     {
-        const arr = JSON.parse(localStorage.getItem("notesData"));
+        const arr = storedValue;
         if(arr.length > 0)
         {
           const id = arr[arr.length - 1].id + 1;
