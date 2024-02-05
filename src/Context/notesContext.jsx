@@ -20,7 +20,7 @@ const NotesProvider = ({ children }) => {
         const arr = storedValue;
         if(arr.length > 0)
         {
-          const id = arr[arr.length - 1].id + 1;
+          const id = arr[0].id + 1;
           setNotesId(id);
           notesDispatch({type:"CREATE" , payLoad: arr});
         }
@@ -50,7 +50,7 @@ const NotesProvider = ({ children }) => {
           newArr = [...action.payLoad];
         }
       else{
-        newArr.push({
+        newArr.unshift({
           id: notesId,
           title: action.payLoad.title,
           content: action.payLoad.content,
